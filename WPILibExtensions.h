@@ -1,6 +1,8 @@
 #ifndef WPILIB_EXTENSIONS_H
 #define WPILIB_EXTENSIONS_H
-
-//include all extensions, here, then include this file
-
+#include "LimitSwitch.h"
+#include "SmartJoystick.h"
+#include "Stallable.h"
+#include "StallableAnalogEncoder.h"
+#include "StallableJaguar.h"
 #endif
