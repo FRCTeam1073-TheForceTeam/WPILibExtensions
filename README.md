@@ -1,5 +1,5 @@
 #WPILib Extensions
-A set classes that add more functionality to the FRC WPI Library. These classes are used by FRC Team 1073: The Force Team in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), but could probably be of use to other teams.
+A set classes that add more functionality to the FRC WPI Library. These classes are used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), but could probably be of use to other teams.
 
 Please clone and/or fork as you see fit, good luck in the competition.
 
