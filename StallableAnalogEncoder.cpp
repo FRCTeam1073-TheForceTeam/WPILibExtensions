@@ -1,5 +1,6 @@
 #include "StallableAnalogEncoder.h"
-StallableAnalogEncoder::StallableAnalogEncoder() : Stallable() {}
+StallableAnalogEncoder::StallableAnalogEncoder(UINT32 moduleNumber, UINT32 channel) : Stallable(),
+	AnalogChannel(moduleNumber, channel){}
 float StallableAnalogEncoder::GetVoltage(){
-	return GetAnalogEncoder()->GetVoltage();
+	return AnalogChannel::GetVoltage();
 }

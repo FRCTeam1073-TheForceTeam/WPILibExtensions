@@ -1,5 +1,6 @@
 #include"StallableJaguar.h"
-StallableJaguar::StallableJaguar() : Stallable() {}
+StallableJaguar::StallableJaguar(UINT8 deviceNumber) : Stallable(),
+		CANJaguar(deviceNumber){}
 float StallableJaguar::GetVoltage(){
-	return GetJaguar()->GetOutputVoltage();
+	return GetOutputVoltage();
 }

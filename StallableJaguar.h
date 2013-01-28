@@ -2,12 +2,10 @@
 #define STALLABLE_JAGUAR_H
 #include "WPILib.h"
 #include "Stallable.h"
-class StallableJaguar : public Stallable{
+class StallableJaguar : public Stallable, CANJaguar{
 public:
-	StallableJaguar();
+	StallableJaguar(UINT8 deviceNumber);
 private:
 	float GetVoltage();
-protected:
-	virtual CANJaguar* GetJaguar() = 0;
 };
 #endif

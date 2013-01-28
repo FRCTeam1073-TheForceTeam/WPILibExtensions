@@ -2,11 +2,10 @@
 #define STALLABLE_ANALOG_ENCODER
 #include "Stallable.h"
 #include "WPILib.h"
-class StallableAnalogEncoder : public Stallable{
+class StallableAnalogEncoder : public Stallable, AnalogChannel{
 public:
-	StallableAnalogEncoder();
+	StallableAnalogEncoder(UINT32 moduleNumber, UINT32 channel);
 protected:
 	float GetVoltage();
-	virtual AnalogChannel* GetAnalogEncoder() = 0;
 };
 #endif
