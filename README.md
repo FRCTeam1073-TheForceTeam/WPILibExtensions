@@ -30,6 +30,14 @@ Extension of the Jaguar class to include built in stall detection. Uses the incl
 ###Stallable Analog Encoder
 Extension of the Analog Channel class to include built in stall detection. Uses the included abstract base class Stallable.
 
+###Print Stall Data
+WPILib Command for pulling debug data off of a Stallable object
+####Usage:
+```
+	Command* test = new PrintStallData(Stallable* stallable);
+	//prints out data and command exits 
+```
+
 ####Usage:
 ```
 	//simple boolean check for stall
