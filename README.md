@@ -1,14 +1,18 @@
 #WPILib Extensions
 A set classes that add more functionality to the FRC WPI Library. These classes are used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), but could probably be of use to other teams.
 
-Please clone and/or fork as you see fit, good luck in the competition.
+Please use as you see fit.
 
 ##Usage
-To use these tools, simply include the global header file WPILibExtensions.h whith the following code:
+To use any of these tools, simply include the global header file WPILibExtensions.h with the following code:
+
 ```	
-	#include "WPILibExtensions/WPILibExtensions.h"`
+	#include "WPILibExtensions/WPILibExtensions.h"
 ```
+
 Note that this statement assumes that the WPILibExtensions directory was cloned in the root of your WindRiver project.
+
+Additionally, to use the Commands included with this library, you must have a WPILib Main Robot class in the root of your project. In this case, I use ``Robot.h``
 
 ##Features
 ###LimitSwitch
@@ -44,4 +48,4 @@ WPILib Command for pulling debug data off of a Stallable object
 	if(yourAnalogEncoder->IsStall()) //...
 ```
 ###SmartJoystick
-Extension class of the Joystick for inversion. Other features, including scaling, we plan on adding in the future.
+Extension class of the Joystick for axis inversion. Other features will be added as we need them.
