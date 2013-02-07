@@ -5,7 +5,6 @@
 class StallableAnalogEncoder : public Stallable, AnalogChannel{
 public:
 	StallableAnalogEncoder(UINT32 moduleNumber, UINT32 channel);
-protected:
 	float GetVoltage();
 };
 #endif
