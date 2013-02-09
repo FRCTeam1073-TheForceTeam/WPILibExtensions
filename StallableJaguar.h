@@ -5,7 +5,7 @@
 class StallableJaguar : public Stallable, CANJaguar{
 public:
 	StallableJaguar(UINT8 deviceNumber);
-private:
-	float GetVoltage();
+protected:
+	float GetVoltageSource();
 };
 #endif

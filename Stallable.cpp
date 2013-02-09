@@ -20,7 +20,7 @@ bool Stallable::IsStall(){
 }
 float Stallable::StallDetectLimit() {return 0.3f;}
 void Stallable::FillStallArray(){
-	voltages[index] = GetVoltage();	//implemented in subclass
+	voltages[index] = GetVoltageSource();	//implemented in subclass
 	index++;
 	if (index == BUFFER){
 		index = 0;
