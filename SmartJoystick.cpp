@@ -28,9 +28,8 @@ float SmartJoystick::Get(Axis axis){
 		default: return value;
 	}
 	switch(mode){
-		case normal:
-			if(fabs(value) < DEAD_ZONE) value = 0.0f;
-			break;
+		if(fabs(value) < DEAD_ZONE) value = 0.0f;
+		case normal: break;
 		case extreme:
 			if (value > 0) value = 1.0f;
 			else if (value < 0) value = -1.0f;
