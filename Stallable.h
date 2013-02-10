@@ -11,11 +11,10 @@ public:
 	bool IsStall();
 protected:
 	virtual float GetVoltageSource() = 0;
-	float* voltages;
-	void FillStallArray();
-	void ResetArray();
+	float old, current;
+	void ProcessVoltageData();
+	void ResetData();
 private:
-	int index;
-	bool hasArrayInit;
+	bool onOld;
 };
 #endif

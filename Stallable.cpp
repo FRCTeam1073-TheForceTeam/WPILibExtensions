@@ -1,36 +1,21 @@
 #include "Stallable.h"
-Stallable::Stallable(){
-	voltages = new float[BUFFER];
-	hasArrayInit = false;
-	index = 0;
+#define NONEXISTANT -1
+Stallable::Stallable(){	
+	ResetData();
 }
-void Stallable::PrintVoltages(){
-	float sum = 0.0f;
-	for(int i = 0; i < BUFFER; i++){
-		printf("%d:\t%f\n", i, voltages[i]);
-		sum += voltages[i];
-	}
-	printf("Average:\t%f\n", (sum/BUFFER));
-}
+void Stallable::PrintVoltages(){printf("Old:\t%f\nNew:\t%f\n\n", old, current);}
 bool Stallable::IsStall(){
-	if(!hasArrayInit) return false;
-	float current = voltages[index];
-	float previous = voltages[index == BUFFER - 1? 0 : index - 1];	
-	return fabs(current - previous) < StallDetectLimit();
+	if(old == NONEXISTANT || current == NONEXISTANT) return false;
+	return fabs(current - old) < StallDetectLimit();
 }
 float Stallable::StallDetectLimit() {return 0.3f;}
-void Stallable::FillStallArray(){
-	voltages[index] = GetVoltageSource();	//implemented in subclass
-	index++;
-	if (index == BUFFER){
-		index = 0;
-		hasArrayInit = true;
-	}
+void Stallable::ProcessVoltageData(){
+	float voltage = GetVoltageSource();
+	if(onOld) old = voltage;
+	else current = voltage;
 }
-void Stallable::ResetArray(){
-	for(int i = 0; i < BUFFER; i++){
-		voltages[i] = 0.0f;
-	}
-	index = 0;
-	hasArrayInit = false;
+void Stallable::ResetData(){
+	onOld = true;
+	old = NONEXISTANT;
+	current = NONEXISTANT;
 }
