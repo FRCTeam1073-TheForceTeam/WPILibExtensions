@@ -3,6 +3,9 @@
 #define BUFFER 10
 #include <stdio.h>
 #include <math.h>
+
+#define VOLT_HISTORY_LEN 3
+
 class Stallable{
 public:
 	Stallable();
@@ -11,8 +14,10 @@ public:
 	bool IsStall();
 protected:
 	virtual float GetVoltageSource() = 0;
-	float priorVoltage, currentVoltage;
+	float voltageHistArray[VOLT_HISTORY_LEN];
 	void ProcessVoltageData();
 	void ResetData();
+private:
+	static const float stallDetectLimitVal = 0.3f;
 };
 #endif
