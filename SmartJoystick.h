@@ -24,8 +24,8 @@ public:
 	void ToggleInvertXAxis();
 	void ToggleInvertYAxis();
 	void ToggleInvertZAxis();
-	void SetJoystickMode(int mode);
-	int GetJoystickMode();
+	void SetJoystickMode(JoystickMode newMode);
+	JoystickMode GetJoystickMode();
 private:
 	bool invertXAxis, invertYAxis, invertZAxis;
 	enum Axis{xAxis, yAxis, zAxis};
