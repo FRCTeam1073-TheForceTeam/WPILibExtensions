@@ -2,6 +2,7 @@
 SmartJoystick::SmartJoystick(int port) : Joystick (port){
 	invertXAxis = false;
 	invertYAxis = false;
+	invertZAxis = false;
 }
 float SmartJoystick::GetX(){return Get(xAxis);}
 float SmartJoystick::GetY(){return Get(yAxis);}
@@ -15,6 +16,7 @@ void SmartJoystick::ToggleInvertXAxis(){invertXAxis = !invertXAxis;}
 void SmartJoystick::ToggleInvertYAxis(){invertYAxis = !invertYAxis;}
 bool SmartJoystick::IsXAxisInverted(){return invertXAxis;}
 bool SmartJoystick::IsYAxisInverted(){return invertYAxis;}
+bool SmartJoystick::IsZAxisInverted(){return invertZAxis;}
 void SmartJoystick::SetJoystickMode(JoystickMode mode) {this->mode = mode;}
 float SmartJoystick::Get(Axis axis){
 	float value = 0.0f;
