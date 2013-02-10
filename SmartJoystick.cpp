@@ -4,6 +4,11 @@ SmartJoystick::SmartJoystick(int port) : Joystick (port){
 	invertYAxis = false;
 	invertZAxis = false;
 }
+SmartJoystick::SmartJoystick(int port, bool invertYAxis) : Joystick (port){
+	invertXAxis = false;
+	this->invertYAxis = invertYAxis;
+	invertZAxis = false;
+}
 float SmartJoystick::GetX(){return Get(xAxis);}
 float SmartJoystick::GetY(){return Get(yAxis);}
 float SmartJoystick::GetZ(){return Get(zAxis);} 
