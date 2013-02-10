@@ -3,19 +3,18 @@
 Stallable::Stallable(){	
 	ResetData();
 }
-void Stallable::PrintVoltages(){printf("Old:\t%f\nNew:\t%f\n\n", old, current);}
+void Stallable::PrintVoltages(){printf("Prior Voltage:\t%f\nNew Voltage:\t%f\n\n", priorVoltage, currentVoltage);}
 bool Stallable::IsStall(){
-	if(old == NONEXISTANT || current == NONEXISTANT) return false;
-	return fabs(current - old) < StallDetectLimit();
+	if(priorVoltage == NONEXISTANT || currentVoltage == NONEXISTANT) return false;
+	return fabs(currentVoltage - priorVoltage) < StallDetectLimit();
 }
 float Stallable::StallDetectLimit() {return 0.3f;}
+
 void Stallable::ProcessVoltageData(){
-	float voltage = GetVoltageSource();
-	if(onOld) old = voltage;
-	else current = voltage;
+	priorVoltage = currentVoltage;
+	currentVoltage = GetVoltageSource();
 }
 void Stallable::ResetData(){
-	onOld = true;
-	old = NONEXISTANT;
-	current = NONEXISTANT;
+	priorVoltage = NONEXISTANT;
+	currentVoltage = NONEXISTANT;
 }

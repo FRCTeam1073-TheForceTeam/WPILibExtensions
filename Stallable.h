@@ -7,14 +7,12 @@ class Stallable{
 public:
 	Stallable();
 	void PrintVoltages();
-	virtual float StallDetectLimit();	//if recorded data does not oscilate this much in volts we return false.
+	virtual float StallDetectLimit();	//if recorded data does not oscillate this much in volts we return false.
 	bool IsStall();
 protected:
 	virtual float GetVoltageSource() = 0;
-	float old, current;
+	float priorVoltage, currentVoltage;
 	void ProcessVoltageData();
 	void ResetData();
-private:
-	bool onOld;
 };
 #endif
