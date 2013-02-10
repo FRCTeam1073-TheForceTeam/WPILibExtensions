@@ -19,11 +19,11 @@ float SmartJoystick::GetHatX() {return GetRawAxis(5);}
 float SmartJoystick::GetHatY() {return GetRawAxis(6) * -1;}	//1 is up
 void SmartJoystick::ToggleInvertXAxis(){invertXAxis = !invertXAxis;}
 void SmartJoystick::ToggleInvertYAxis(){invertYAxis = !invertYAxis;}
+void SmartJoystick::ToggleInvertZAxis(){invertZAxis = !invertZAxis;}
 bool SmartJoystick::IsXAxisInverted(){return invertXAxis;}
 bool SmartJoystick::IsYAxisInverted(){return invertYAxis;}
 bool SmartJoystick::IsZAxisInverted(){return invertZAxis;}
-void SmartJoystick::SetJoystickMode(JoystickMode mode){this->mode = mode;}
-int SmartJoystick::GetJoystickMode(){return mode;}
+int SmartJoystick::GetJoystickMode() {return mode;}
 float SmartJoystick::Get(Axis axis){
 	float value = 0.0f;
 	switch(axis){
@@ -43,7 +43,7 @@ float SmartJoystick::Get(Axis axis){
 			else if (value < 0) value = -1.0f;
 			break;
 		case cubic:
-			//TODO: write cubic
+			value = (value * CUBIC_CONSTANT) + (1 - CUBIC_CONSTANT) * (value * value * value);
 			break;
 		default: break;
 	}
