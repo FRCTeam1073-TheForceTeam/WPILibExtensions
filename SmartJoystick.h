@@ -23,6 +23,7 @@ public:
 	void ToggleInvertYAxis();
 	enum JoystickMode{normal, extreme, cubic};
 	void SetJoystickMode(JoystickMode mode);
+	int GetJoystickMode();
 private:
 	bool invertXAxis, invertYAxis, invertZAxis;
 	enum Axis{xAxis, yAxis, zAxis};

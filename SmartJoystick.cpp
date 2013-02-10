@@ -22,7 +22,8 @@ void SmartJoystick::ToggleInvertYAxis(){invertYAxis = !invertYAxis;}
 bool SmartJoystick::IsXAxisInverted(){return invertXAxis;}
 bool SmartJoystick::IsYAxisInverted(){return invertYAxis;}
 bool SmartJoystick::IsZAxisInverted(){return invertZAxis;}
-void SmartJoystick::SetJoystickMode(JoystickMode mode) {this->mode = mode;}
+void SmartJoystick::SetJoystickMode(JoystickMode mode){this->mode = mode;}
+int SmartJoystick::GetJoystickMode(){return mode;}
 float SmartJoystick::Get(Axis axis){
 	float value = 0.0f;
 	switch(axis){
