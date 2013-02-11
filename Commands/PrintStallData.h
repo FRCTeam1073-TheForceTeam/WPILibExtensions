@@ -6,10 +6,12 @@
 class PrintStallData : public Command{
 public:
 	PrintStallData(Stallable* stallable);
-	void Initialize(){}
+	void Initialize();
 	void Execute(){}
 	bool IsFinished();
 	void End(){}
 	void Interrupted(){}
+private:
+	Stallable* stallable;
 };
 #endif
