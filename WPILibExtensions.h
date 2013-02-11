@@ -5,4 +5,5 @@
 #include "StallableAnalogEncoder.h"
 #include "StallableJaguar.h"
 #include "Commands/PrintStallData.h"
+#include "Commands/InterruptSubsystem.h"
 #endif
