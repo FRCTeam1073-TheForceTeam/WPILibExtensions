@@ -4,6 +4,7 @@
 #include "WPILib.h"
 class StallableAnalogEncoder : public Stallable, AnalogChannel{
 public:
+	StallableAnalogEncoder(UINT32 channel);
 	StallableAnalogEncoder(UINT32 moduleNumber, UINT32 channel);
 	float GetVoltage() {return AnalogChannel::GetVoltage();}
 protected:
