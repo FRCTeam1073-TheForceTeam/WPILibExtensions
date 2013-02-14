@@ -1,4 +1,4 @@
-#WPILib Extensions
+﻿#WPILib Extensions
 This library is a set of C++ classes that add more functionality to the FRC WPI Library. These classes are used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), but could probably be used to save you time when programming.
 
 The following Document explains all of our tools and the functionality they will add to your robot, as well as how to use them. **Don't waste time trying to work with the stock library, when you can get some great free help here from Team 1073 :)**
@@ -36,10 +36,11 @@ These commands provide quick utility features to make debugging easier.
 
 <a name = "LimitSwitch"/>
 ###LimitSwitch
-Class to represent a limit switch digital IO. No more `== 1` or `== 0`, instead a simple `IsPressed()` Method.
+Simple inline boolean function for doing a quick check for a Limit Switch being pressed. No more confusing logic with the pull up resistor, `==0', `==1`, etc. Instead, just call `LimitPressed(DigitalInput* input)`
 
 	//simple check for limit Switch Press
-	if(yourLimitSwitch->IsPressed()) //...
+	DigitalInput* limitSwitch = new DigitalInput(1);
+	bool isPressed = LimitPressed(limitSwitch);
 	
 <a name = "SmartJoystick"/>	
 ###SmartJoystick
