@@ -36,7 +36,7 @@ These commands provide quick utility features to make debugging easier.
 
 <a name = "LimitSwitch"/>
 ###LimitSwitch
-Simple inline boolean function for doing a quick check for a Limit Switch being pressed. No more confusing logic with the pull up resistor, `==0', `==1`, etc. Instead, just call `LimitPressed(DigitalInput* input)`
+Simple inline boolean function for doing a quick check for a Limit Switch being pressed. No more confusing logic with the pull up resistor, `==0`, `==1`, etc. Instead, just call `LimitPressed(DigitalInput* input)`
 
 	//simple check for limit Switch Press
 	DigitalInput* limitSwitch = new DigitalInput(1);
