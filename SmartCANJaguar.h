@@ -1,7 +1,8 @@
 #ifndef SMART_CAN_JAGUAR_H
 #define SMART_CAN_JAGUAR_H
 #include "WPILib.h"
-class SmartCANJaguar : public CANJaguar{
+#include "Stallable.h"
+class SmartCANJaguar : public CANJaguar, Stallable{
 public:
 	SmartCANJaguar(UINT8 deviceNumber);
 	void Invert();
@@ -9,5 +10,7 @@ public:
 	void Set(float value);
 private:
 	bool isInverted;
+protected:
+	float GetVoltageSource();
 };
 #endif

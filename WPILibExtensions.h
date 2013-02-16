@@ -3,7 +3,7 @@
 #include "LimitSwitch.h"
 #include "SmartJoystick.h"
 #include "StallableAnalogEncoder.h"
-#include "StallableJaguar.h"
+#include "SmartCANJaguar.h"
 #include "OnOff.h"
 #include "Commands/PrintStallData.h"
 #include "Commands/InterruptSubsystem.h"
