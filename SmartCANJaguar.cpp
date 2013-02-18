@@ -7,3 +7,15 @@ void SmartCANJaguar::Set(float value){
 	CANJaguar::Set(value);
 }
 float SmartCANJaguar::GetVoltageSource(){return GetOutputVoltage();}
+void SmartCANJaguar::ConfigureSpeedMode(){
+	DisableControl();
+	ChangeControlMode(kSpeed);
+	SetSpeedReference(kSpeedRef_Encoder);
+	ConfigEncoderCodesPerRev(360);
+	EnableControl();
+}
+void SmartCANJaguar::ConfigureVoltageMode(){
+	DisableControl();
+	ChangeControlMode(kVoltage);
+	EnableControl();
+}

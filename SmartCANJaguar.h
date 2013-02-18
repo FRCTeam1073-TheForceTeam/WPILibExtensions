@@ -8,6 +8,8 @@ public:
 	void Invert();
 	bool IsInverted();
 	void Set(float value);
+	void ConfigureSpeedMode();
+	void ConfigureVoltageMode();
 private:
 	bool isInverted;
 protected:
