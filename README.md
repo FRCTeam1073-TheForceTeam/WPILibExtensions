@@ -1,5 +1,5 @@
 #WPILib Extensions
-This library is a set of C++ classes that add more functionality to the FRC WPI Library. These classes are used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), but could probably be used to save you time when programming.
+This library is a set of C++ classes that add more functionality to the FRC WPI Library. These classes are written used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), and could probably be used to save you time and sanity when programming your.
 
 The following Document explains all of our tools and the functionality they will add to your robot, as well as how to use them. **Don't waste time fiddling with the stock library, when you can get some great free help here from Team 1073 :)**
 
@@ -22,7 +22,7 @@ These tools provide access to more functionality with the WPILib.
 
 *	Common Functions - Not much to say here, just contains some inline math functions that we'd usually otherwise end up writing at like five different spots in our code.
 *	[LimitSwitch](#LimitSwitch) - Easily integrate Digital Limit Switches into code without worrying about equaling a return value
-*	[SmartCANJaguar](#SmarCANJaguar) - Contains functions for manipulating the mdoe a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
+*	[SmartCANJaguar](#SmartCANJaguar) - Contains functions for manipulating the mdoe a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
 *	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithims, across all axis. Functionality like axis inversion is can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
 *	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and `AnalogEncoder` so you don't burn out your motors!
