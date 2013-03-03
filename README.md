@@ -75,6 +75,17 @@ When using a `CANJaguar`, you often have to tell the cRIO how it will be used. T
 	}
 	leftDrive->Set(0.0);	//turn off motor, we have a stall
  
+####Check if the CANJaguar exists on the 2CAN Bus
+To do a diagnostic check to see if the 2CAN Bus can reach your CANJaguar hardware, just call the boolean method `SmartCANJaguar::ExistsOn2CANBus()`
+
+	SmartCANJaguar* leftDrive = new SmartCANJaguar(1);
+	if(leftDrive->ExistsOn2CANBus*()){
+		printf("This exists\n");
+	}
+	else{
+		printf("This doesn't exist\n");
+	}
+
 <a name = "SmartGyro"/>
 ###SmartGyro
 The `WPILib Gyro` class returns angle measurements in Radians/pi. This is useful for counting how many pis you have, but we don't like this form of measuring angles. When constructing a `SmartGyro` it will behave just like a `Gyro` but the data it returns can be manipulated to return degrees or radians, as well. By having an extension class to manipulate these values, you are warranted security, as every call to `SmartGyro::GetAngle` will return the same value, as opposed to manipulating what `Gyro::GetAngle` returns throughout your code.
