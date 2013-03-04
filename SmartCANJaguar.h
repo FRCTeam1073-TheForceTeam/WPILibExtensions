@@ -6,6 +6,7 @@
 class SmartCANJaguar : public CANJaguar, Stallable{
 public:
 	SmartCANJaguar(UINT8 deviceNumber);
+	SmartCANJaguar(UINT8 deviceNumber, bool isInverted);
 	void Invert();
 	bool IsInverted();
 	void Set(float value);

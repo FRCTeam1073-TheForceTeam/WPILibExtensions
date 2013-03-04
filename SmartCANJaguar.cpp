@@ -1,5 +1,10 @@
 #include "SmartCANJaguar.h"
-SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber) : CANJaguar(deviceNumber), Stallable(){isInverted = false;}
+SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber) : CANJaguar(deviceNumber), Stallable(){
+	isInverted = false;
+}
+SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted) : CANJaguar(deviceNumber), Stallable(){
+	this->isInverted = isInverted;
+}
 void SmartCANJaguar::Invert() {isInverted = !isInverted;}
 bool SmartCANJaguar::IsInverted(){return isInverted;}
 void SmartCANJaguar::Set(float value){
