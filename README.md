@@ -1,4 +1,4 @@
-#WPILib Extensions
+﻿#WPILib Extensions
 This library is a set of C++ classes that add more functionality to the FRC WPI Library. These classes are written used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), and could probably be used to save you time and sanity when programming your.
 
 The following Document explains all of our tools and the functionality they will add to your robot, as well as how to use them. **Don't waste time fiddling with the stock library, when you can get some great free help here from Team 1073 :)**
@@ -76,10 +76,10 @@ When using a `CANJaguar`, you often have to tell the cRIO how it will be used. T
 	leftDrive->Set(0.0);	//turn off motor, we have a stall
  
 ####Check if the CANJaguar exists on the 2CAN Bus
-To do a diagnostic check to see if the 2CAN Bus can reach your CANJaguar hardware, just call the boolean method `SmartCANJaguar::ExistsOn2CANBus()`
+To do a diagnostic check to see if the 2CAN Bus can reach your CANJaguar hardware, just call the boolean method `SmartCANJaguar::ExistsOnBus()`
 
 	SmartCANJaguar* leftDrive = new SmartCANJaguar(1);
-	if(leftDrive->ExistsOn2CANBus*()){
+	if(leftDrive->ExistsBus()){
 		printf("This exists\n");
 	}
 	else{

@@ -19,10 +19,10 @@ void SmartCANJaguar::ConfigureVoltageMode(){
 	ChangeControlMode(kVoltage);
 	EnableControl();
 }
-bool SmartCANJaguar::ExistsOn2CANBus(){
-	if(jag->GetError().GetCode() == CAN_TIMEOUT)
+bool SmartCANJaguar::ExistsOnBus(){
+	if(GetError().GetCode() == CAN_TIMEOUT)
 	{
-		jag->ClearError();
+		ClearError();
 		return false;
 	}
 	return true;

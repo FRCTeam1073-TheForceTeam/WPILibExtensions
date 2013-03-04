@@ -11,7 +11,7 @@ public:
 	void Set(float value);
 	void ConfigureSpeedMode();
 	void ConfigureVoltageMode();
-	bool ExistsOn2CANBus();
+	bool ExistsOnBus();
 private:
 	bool isInverted;
 protected:
