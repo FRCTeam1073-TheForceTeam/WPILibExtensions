@@ -20,7 +20,7 @@ These classes extend off items in Brad Miller's `WPILib` to add even more functi
 **[Tools:](#Tools)**
 These tools provide access to more functionality with the WPILib.
 
-*	Common Functions - Not much to say here, just contains some inline math functions that we'd usually otherwise end up writing at like five different spots in our code.
+*	[CommonFunctions](#CommonFunctions) - Not much to say here, just contains some inline math functions that we'd usually otherwise end up writing at like five different spots in our code.
 *	[LimitSwitch](#LimitSwitch) - Easily integrate Digital Limit Switches into code without worrying about equaling a return value
 *	[SmartCANJaguar](#SmartCANJaguar) - Contains functions for manipulating the mdoe a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
@@ -36,6 +36,10 @@ These commands provide quick utility features to make debugging easier.
 
 <a name = "Tools"/>
 ##Tools
+
+<a name = "CommonFunctions"/>
+###Common Functions
+Basic math functions and constants that are implemented as macros.
 
 <a name = "LimitSwitch"/>
 ###LimitSwitch
@@ -55,6 +59,12 @@ A class that provides some useful functions to `CANJaguar`
 	rightDrive->Invert();	//Invert Jag
 	bool check = rightDrive->IsInverted();	//optional debug check to see if the Jag is inverted
 	rightDrive->Invert();	//put it back
+
+	//or, invert a SmartCANJaguar right in its constructor
+	SmartCANJaguar* leftDrive = new SmartCANJaguar(1, true);	//constructed with inversion
+	SmartCANJaguar* rightDrive = new SmartCANJaguar(2, fakse);	//constructed without inversion
+	SmartCANJaguar* discLauncher = new SmartCANJaguar(3);		//constructed without inversion
+
 
 ####Easily change `CANJaguar` Modes
 When using a `CANJaguar`, you often have to tell the cRIO how it will be used. This usually involves calling several `CANJaguar` functions in order to tell it you want to set it based off of encoder readings (`CANJaguar::kSpeed`), or by applying a percantage of allocatable voltage (`CANJaguar::kVoltage`). With `SmartCANJaguar` these modes can be easily applied. (*note that encoder configuration varies from Jaguar to Jaguar, and you might have to adapt these calls to match your specific hardware configuration...*)
