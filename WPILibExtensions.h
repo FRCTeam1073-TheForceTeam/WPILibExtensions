@@ -7,6 +7,7 @@
 #include "StallableAnalogEncoder.h"
 #include "SmartCANJaguar.h"
 #include "OnOff.h"
+#include "IREncoder.h"
 #include "Commands/PrintStallData.h"
 #include "Commands/InterruptSubsystem.h"
 #endif
