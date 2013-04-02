@@ -29,7 +29,7 @@ void IREncoder::ProcessInterrupt()
 {
 		double currentTime = Timer::GetFPGATimestamp();
 		double elapsedTime = currentTime - lastTime;
-		if (elapsedTime != 0)
+		if (elapsedTime > 0.002)
 			lastRPM = ((1.0 / elapsedTime) * 60.0);
 		lastTime = currentTime;
 		//printf("I WAS HERE!!!\n");
