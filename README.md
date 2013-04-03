@@ -26,6 +26,7 @@ These tools provide access to more functionality with the WPILib.
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
 *	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithims, across all axis. Functionality like axis inversion is can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
 *	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and `AnalogEncoder` so you don't burn out your motors!
+*	[IREncoder](#IREncoder) - A class inhereting from DigitalInput representing an encoder made from an Infrared Emmiter and Detector and a peice of reflective tape. Calculates rpm using high speed inturrupts. 
 
 **[Commands:](#Commands)**
 These commands provide quick utility features to make debugging easier.
