@@ -1,5 +1,5 @@
 ﻿#WPILib Extensions
-This library is a set of C++ classes that add more functionality to the FRC WPI Library. These classes are written used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), and could probably be used to save you time and sanity when programming your.
+This library is a set of C++ classes that add more functionality to the FRC WPI Library. These classes are written used by [FRC Team 1073: The Force Team](http://theforceteam.com) in our [Ultimate Ascent Code](https://github.com/FRCTeam1073-TheForceTeam/robot13), and could probably be used to save you time and sanity when programming yours.
 
 The following Document explains all of our tools and the functionality they will add to your robot, as well as how to use them. **Don't waste time fiddling with the stock library, when you can get some great free help here from Team 1073 :)**
 
