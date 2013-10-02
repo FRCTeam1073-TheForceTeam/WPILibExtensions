@@ -142,7 +142,7 @@ Quickly invert a `SmartJoystick	` Axis without having to change values all over 
 	
 	float y = operatorStick->GetY();	//Get the Y value... oh no, it's upside down!!!
 	operatorStick->InvertYAxis();	//Simple Call to invert the Axis, works on X, Y, and Z
-	y = operatorStick->GetY();	//The Y value is know -1 times what it was earlier
+	y = operatorStick->GetY();	//The Y value is now -1 times what it was earlier
 ####Hat Axis
 Many Joysticks have a hat on the top of the Joystick, Generally these live on Axis 5 and 6 of the Joystick. With `SmartJoystick` it's easy to get their values.
 
