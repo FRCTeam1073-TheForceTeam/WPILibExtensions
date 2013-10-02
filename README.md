@@ -22,11 +22,11 @@ These tools provide access to more functionality with the WPILib.
 
 *	[CommonFunctions](#CommonFunctions) - Not much to say here, just contains some inline math functions that we'd usually otherwise end up writing at like five different spots in our code.
 *	[LimitSwitch](#LimitSwitch) - Easily integrate Digital Limit Switches into code without worrying about equaling a return value
-*	[SmartCANJaguar](#SmartCANJaguar) - Contains functions for manipulating the mdoe a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
+*	[SmartCANJaguar](#SmartCANJaguar) - Contains functions for manipulating the mode a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
 *	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithims, across all axis. Functionality like axis inversion is can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
 *	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and `AnalogEncoder` so you don't burn out your motors!
-*	[IREncoder](#IREncoder) - A class inhereting from DigitalInput representing an encoder made from an Infrared Emmiter and Detector and a peice of reflective tape. Calculates rpm using high speed inturrupts. 
+*	[IREncoder](#IREncoder) - A class inhereting from WPI's `DigitalInput` representing an encoder made from an Infrared Emmiter and Detector and a peice of reflective tape. Calculates rpm using high speed inturrupts. 
 
 **[Commands:](#Commands)**
 These commands provide quick utility features to make debugging easier.
