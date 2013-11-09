@@ -26,7 +26,7 @@ These tools provide access to more functionality with the WPILib.
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
 *	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithims, across all axis. Functionality like axis inversion is can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
 *	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and `AnalogEncoder` so you don't burn out your motors!
-*	[IREncoder](#IREncoder) - A class inhereting from WPI's `DigitalInput` representing an encoder made from an Infrared Emmiter and Detector and a peice of reflective tape. Calculates rpm using high speed inturrupts. 
+*	[IREncoder](#IREncoder) - A class inhereting from WPI's `DigitalInput` representing an encoder made from an Infrared Emmiter and Detector and a peice of reflective tape. Calculates RPM using high speed interrupts. 
 
 **[Commands:](#Commands)**
 These commands provide quick utility features to make debugging easier.
@@ -76,7 +76,7 @@ When using a `CANJaguar`, you often have to tell the cRIO how it will be used. T
 	leftDrive->ConfigureVoltageMode(); 
 
 ####Stall Detection
-`SmartCANJaguar`s implement [Stallable](#Stalable) so they can easily be checked for Stall Detection. For more information on `Stallable` [click here](#Stallable).
+`SmartCANJaguar`s implement [Stallable](#Stallable) so they can easily be checked for Stall Detection. For more information on `Stallable` [click here](#Stallable).
 
 	//pseduo code for stall detection
 	SmartCANJaguar* leftDrive = new SmartCANJaguar(1);
