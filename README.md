@@ -63,7 +63,7 @@ A class that provides some useful functions to `CANJaguar`
 
 	//or, invert a SmartCANJaguar right in its constructor
 	SmartCANJaguar* leftDrive = new SmartCANJaguar(1, true);	//constructed with inversion
-	SmartCANJaguar* rightDrive = new SmartCANJaguar(2, fakse);	//constructed without inversion
+	SmartCANJaguar* rightDrive = new SmartCANJaguar(2, false);	//constructed without inversion
 	SmartCANJaguar* discLauncher = new SmartCANJaguar(3);		//constructed without inversion
 
 
