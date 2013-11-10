@@ -99,7 +99,7 @@ To do a diagnostic check to see if the 2CAN Bus can reach your CANJaguar hardwar
 
 <a name = "SmartGyro"/>
 ###SmartGyro
-The `WPILib Gyro` class returns angle measurements in Radians/pi. This is useful for counting how many pis you have, but we don't like this form of measuring angles. When constructing a `SmartGyro` it will behave just like a `Gyro` but the data it returns can be manipulated to return degrees or radians, as well. By having an extension class to manipulate these values, you are warranted security, as every call to `SmartGyro::GetAngle` will return the same value, as opposed to manipulating what `Gyro::GetAngle` returns throughout your code.
+The `WPILib` `Gyro` class returns angle measurements in Radians/pi. This is useful for counting how many pis you have, but we don't like this form of measuring angles. When constructing a `SmartGyro` it will behave just like a `Gyro` but the data it returns can be manipulated to return degrees or radians, as well. By having an extension class to manipulate these values, you are warranted security, as every call to `SmartGyro::GetAngle` will return the same value, as opposed to manipulating what `Gyro::GetAngle` returns throughout your code.
 
 ####Changing Gyro Mode
 	SmartGyro* gyro = new SmartGyro(1);
