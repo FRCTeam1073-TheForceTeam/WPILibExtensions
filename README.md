@@ -25,8 +25,8 @@ These tools provide access to more functionality with the WPILib.
 *	[SmartCANJaguar](#SmartCANJaguar) - Contains functions for manipulating the mode a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
 *	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithims across all axis. Functionality, like axis inversion, can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
-*	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and `AnalogEncoder` so you don't burn out your motors!
-*	[IREncoder](#IREncoder) - A class inhereting from WPI's `DigitalInput` representing an encoder made from an Infrared Emmiter and Detector and a peice of reflective tape. Calculates RPM using high speed interrupts. 
+*	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and an `AnalogEncoder` so you don't burn out your motors!
+*	[IREncoder](#IREncoder) - A class inhereting from WPI's `DigitalInput` representing an encoder made from an Infrared Emmiter and Detector and a piece of reflective tape. Calculates RPM using high speed interrupts. 
 
 **[Commands:](#Commands)**
 These commands provide quick utility features to make debugging easier.
