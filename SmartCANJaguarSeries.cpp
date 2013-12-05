@@ -17,3 +17,15 @@ void SmartCANJaguarSeries::Off() {
 SmartCANJaguar* SmartCANJaguarSeries::Get(int index) {
 	return jagList.at(index);
 }
+
+void SmartCANJaguarSeries::ConfigureVoltageMode() {
+	for (int i = 0; i < (int) jagList.size(); i++) {
+		jagList.at(i)->ConfigureVoltageMode();
+	}
+}
+
+void SmartCANJaguarSeries::ConfigureSpeedMode() {
+	for (int i = 0; i < (int) jagList.size(); i++) {
+		jagList.at(i)->ConfigureSpeedMode();
+	}
+}

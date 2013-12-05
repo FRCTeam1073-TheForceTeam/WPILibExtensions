@@ -7,6 +7,8 @@ public:
 	SmartCANJaguarSeries();
 	void Add(SmartCANJaguar* jaguar);
 	void Set(float value);
+	void ConfigureVoltageMode();
+	void ConfigureSpeedMode();
 	void Off();
 	// just in case you want a specific pointer
 	SmartCANJaguar* Get(int index);
