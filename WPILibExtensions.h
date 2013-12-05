@@ -8,6 +8,7 @@
 #include "SmartCANJaguar.h"
 #include "OnOff.h"
 #include "IREncoder.h"
+#include "SmartCANJaguarSeries.h"
 #include "Commands/PrintStallData.h"
 #include "Commands/InterruptSubsystem.h"
 #endif
