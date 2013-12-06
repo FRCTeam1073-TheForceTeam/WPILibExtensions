@@ -13,7 +13,7 @@ public:
 	// just in case you want a specific pointer
 	SmartCANJaguar* Get(int index);
 private:
-	vector<SmartCANJaguar*> jagList;
+	vector<SmartCANJaguar*>* jagList;
 };
 
 #endif

@@ -1,12 +1,14 @@
 #include "SmartCANJaguarSeries.h"
-SmartCANJaguarSeries::SmartCANJaguarSeries() {}
+SmartCANJaguarSeries::SmartCANJaguarSeries() {
+	jagList = new vector<SmartCANJaguar*>();
+}
 void SmartCANJaguarSeries::Add(SmartCANJaguar* jaguar) {
-	jagList.push_back(jaguar);
+	jagList->push_back(jaguar);
 }
 
 void SmartCANJaguarSeries::Set(float value) {
-	for (int i = 0; i < (int)jagList.size(); i++) {
-		jagList.at(i)->Set(value);
+	for (int i = 0; i < (int)jagList->size(); i++) {
+		jagList->at(i)->Set(value);
 	}
 }
 
@@ -15,17 +17,17 @@ void SmartCANJaguarSeries::Off() {
 }
 
 SmartCANJaguar* SmartCANJaguarSeries::Get(int index) {
-	return jagList.at(index);
+	return jagList->at(index);
 }
 
 void SmartCANJaguarSeries::ConfigureVoltageMode() {
-	for (int i = 0; i < (int) jagList.size(); i++) {
-		jagList.at(i)->ConfigureVoltageMode();
+	for (int i = 0; i < (int) jagList->size(); i++) {
+		jagList->at(i)->ConfigureVoltageMode();
 	}
 }
 
 void SmartCANJaguarSeries::ConfigureSpeedMode() {
-	for (int i = 0; i < (int) jagList.size(); i++) {
-		jagList.at(i)->ConfigureSpeedMode();
+	for (int i = 0; i < (int) jagList->size(); i++) {
+		jagList->at(i)->ConfigureSpeedMode();
 	}
 }
