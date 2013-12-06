@@ -11,4 +11,5 @@
 #include "SmartCANJaguarSeries.h"
 #include "Commands/PrintStallData.h"
 #include "Commands/InterruptSubsystem.h"
+#include "Commands/ChangeJoystickModeCommand.h"
 #endif

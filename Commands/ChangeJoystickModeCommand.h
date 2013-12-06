@@ -3,17 +3,19 @@
 #include "WPILib.h"
 #include "../SmartJoystick.h"
 #include <vector>
+#include <cstdarg>
 class ChangeJoystickModeCommand : public Command {
 public:
-	ChangeJoystickModeCommand(SmartJoystick::JoystickMode mode, SmartJoystick* joystick);
-	ChangeJoystickModeCommand(SmartJoystick::JoystickMode mode, vector<SmartJoystick*> joysticks);
+	ChangeJoystickModeCommand(SmartJoystick::JoystickMode mode);
 	void Initialize();
 	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
+	static void AddSmartJoystickPointers(int num, ...);
 private:
-	vector<SmartJoystick*> joysticks;
+
+	static vector<SmartJoystick*>* joysticks;
 	SmartJoystick::JoystickMode mode;
 };
 #endif
