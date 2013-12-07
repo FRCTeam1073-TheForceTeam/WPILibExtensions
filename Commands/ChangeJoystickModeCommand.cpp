@@ -16,7 +16,7 @@ void ChangeJoystickModeCommand::Initialize() {
 void ChangeJoystickModeCommand::Execute() {}
 bool ChangeJoystickModeCommand::IsFinished() {return true;}
 
-void ChangeJoystickModeCommand::End() {} //no need to clear the joysticks vector because WPILib will take care of that when this Command dies.
+void ChangeJoystickModeCommand::End() {}
 void ChangeJoystickModeCommand::Interrupted() {} //should never get called
 
 void ChangeJoystickModeCommand::AddSmartJoystickPointers(int num, ...) {
