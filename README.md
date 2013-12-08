@@ -34,6 +34,7 @@ These commands provide quick utility features to make debugging easier.
 
 *	[InterruptSubsystem](#InterruptSubsystem) - Takes a pointer to a WPILib `Subsystem` and interrupts all WPILib `Command`s that are using it.
 *	[PrintStallData](#PrintStallData) - Prints to Standard Out voltage data regarding a device that is an implementation of [Stallable](#Stallable)
+*	[ChangeJoystickModeCommand](#ChangeJoystickModeCommand) - Holds a vector of `SmartJoystick*` and applies a `SmartJoystick::JoystickMode` to each one. Allows programmers to map scaling changes to multiple joysticks through one WPILib `Command`.
 
 
 <a name = "Tools"/>
