@@ -212,3 +212,39 @@ Prints out the collected voltage data of a `Stallable` device.
 	PrintStallData* command = new PrintStallData(leftMotor); //make command
 	command->Start(); //Starts command, data will be printed.
 
+<a name = "ChangeJoystickModeCommand">
+
+###ChangeJoystickModeCommand
+
+This `Command` holds a pointer to a C++ vector of type `SmartJoystick`. If Several joysticks are used for a similar purpose, *IE tank drive*, then it would be potentially dangerous for any nearby people and just bad for the hardware to not manipulate the joystick values for **both** inputs the same way. 
+
+This `Command` solves that by taking a `SmartJoystick::JoystickMode` and applying it to every `SmartJoystick` object it holds. Because it is a WPILib `Command`, it can very easily be mapped to the WPILib `JoystickButton` class for easy integration into a Command Based robot codebase.
+
+<pre>
+// here are some SmartJoysticks, we want their modes to be identical.
+SmartJoystick* leftTankStick = new SmartJoystick(1);
+SmartJoystick* rightTankStick = new SmartJoystick(2);
+
+// a third controller we will use for button presses.
+SmartJoystick* operatorStick = new SmartJoystick(3);
+
+// pass in the number of SmartJoysticks we'd like to use, then their pointers
+ChangeJoystickModeCommand::AddSmartJoystickPointers(2, leftTankStick, 
+rightTankStick);
+
+// now just map ChangeJoystickModeCommand pointers with the desired mode to user input
+
+// normal mode
+JoystickButton* switchToNormal = new JoystickButton(operatorStick, 1);
+switchToNormal->WhenPressed(new ChangeJoystickModeCommand(SmartJoystick::normal));
+
+
+// extreme mode
+JoystickButton* switchToExtreme = new JoystickButton(operatorStick, 2);
+switchToExtreme->WhenPressed(new ChangeJoystickModeCommand(SmartJoystick::extreme));
+
+
+// normal mode
+JoystickButton* switchToCubic = new JoystickButton(operatorStick, 3);
+switchToCubic->WhenPressed(new ChangeJoystickModeCommand(SmartJoystick::cubic));
+</pre>
