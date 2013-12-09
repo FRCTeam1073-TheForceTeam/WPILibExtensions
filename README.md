@@ -14,7 +14,7 @@ To use any of these tools, simply include the global header file WPILibExtension
 *Note that this statement assumes that the WPILibExtensions directory was cloned in the root of your WindRiver project.*
 
 
-These classes extend off items in Brad Miller's `WPILib` to add even more functionality to your robot codebase. We hope that they will be of help to you! If you ever need help, or want to see a feature added, you're welcome to talk over this github repository, or to code the feature in yourself!
+These classes extend off items in Brad Miller's `WPILib` to add even more functionality to your robot codebase. We hope that they will be of help to you! If you ever need help, or want to see a feature added, you're welcome to talk over this GitHub repository, or to code the feature in yourself!
 
 ##Contents:
 **[Tools:](#Tools)**
@@ -23,11 +23,11 @@ These tools provide access to more functionality with the WPILib.
 *	[CommonFunctions](#CommonFunctions) - Not much to say here -- just contains some inline math functions that we'd usually otherwise end up writing at like five different spots in our code.
 *	[LimitSwitch](#LimitSwitch) - Easily integrate Digital Limit Switches into code without worrying about equaling a return value.
 *	[SmartCANJaguar](#SmartCANJaguar) - Contains functions for manipulating the mode a CANJaguar is in (*which is usually done in several calls*), and provides Stall Detection and Global Inversion. Very Useful.
-*	[SmartCANJaguarSeries](#SmartCANJaguarSeries) - A class that holds a variable amount of `SmartCANJaguar` pointers, featuring functionality that allows all of them to be called and or configured at once. This is useful for when you use multiple CANJauar controllers for the same drivetrain to source more power. 
+*	[SmartCANJaguarSeries](#SmartCANJaguarSeries) - A class that holds a variable amount of `SmartCANJaguar` pointers, featuring functionality that allows all of them to be called and or configured at once. This is useful for when you use multiple CANJaguar controllers for the same drivetrain to source more power. 
 *	[SmartGyro](#SmartGyro) - A class to manipulate the values that a Gyro returns. Globally get angle measurements represented however you want.
-*	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithims across all axis. Functionality, like axis inversion, can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
+*	[SmartJoystick](#SmartJoystick) - Gain full control of your joysticks by adding cubic and extreme algorithms across all axis. Functionality, like axis inversion, can be added in easily. Functions to get the fickle Hat axis on a joystick are also included.
 *	[Stallable](#Stallable) - Easily add Stall Detection to a `CANJaguar` and an `AnalogEncoder` so you don't burn out your motors!
-*	[IREncoder](#IREncoder) - A class inhereting from WPI's `DigitalInput` representing an encoder made from an Infrared Emmiter and Detector and a piece of reflective tape. Calculates RPM using high speed interrupts. 
+*	[IREncoder](#IREncoder) - A class inheriting from WPI's `DigitalInput` representing an encoder made from an Infrared Emitter and Detector and a piece of reflective tape. Calculates RPM using high speed interrupts. 
 
 **[Commands:](#Commands)**
 These commands provide quick utility features to make debugging easier.
@@ -46,7 +46,7 @@ Basic math functions and constants that are implemented as macros.
 
 <a name = "LimitSwitch"/>
 ###LimitSwitch
-Simple inline boolean function for doing a quick check for a Limit Switch being pressed. No more confusing logic with the pull up resistor, `==0`, `==1`, etc. Instead, just call `LimitPressed(DigitalInput* input)`.
+Simple inline boolean functions for doing a quick check for a Limit Switch being pressed. No more confusing logic with the pull up resistor, `==0`, `==1`, etc. Instead, just call `LimitPressed(DigitalInput* input)`.
 
 	//simple check for limit Switch Press
 	DigitalInput* limitSwitch = new DigitalInput(1);
@@ -70,7 +70,7 @@ A class that provides some useful functions to `CANJaguar`.
 
 
 ####Easily change `CANJaguar` Modes
-When using a `CANJaguar`, you often have to tell the cRIO how it will be used. This usually involves calling several `CANJaguar` functions in order to tell it you want to set it based off of encoder readings (`CANJaguar::kSpeed`), or by applying a percantage of allocatable voltage (`CANJaguar::kVoltage`). With `SmartCANJaguar`, these modes can be easily applied. (*note that encoder configuration varies from Jaguar to Jaguar, and you might have to adapt these calls to match your specific hardware configuration...*)
+When using a `CANJaguar`, you often have to tell the cRIO how it will be used. This usually involves calling several `CANJaguar` functions in order to tell it you want to set it based off of encoder readings (`CANJaguar::kSpeed`), or by applying a percentage of allocatable voltage (`CANJaguar::kVoltage`). With `SmartCANJaguar`, these modes can be easily applied. (*note that encoder configuration varies from Jaguar to Jaguar, and you might have to adapt these calls to match your specific hardware configuration...*)
 
 	SmartCANJaguar* leftDrive = new SmartCANJaguar(1);	//make jag
 	leftDrive->ConfigureSpeedMode();	//speed mode
@@ -92,7 +92,7 @@ When using a `CANJaguar`, you often have to tell the cRIO how it will be used. T
 To do a diagnostic check to see if the 2CAN Bus can reach your CANJaguar hardware, just call the boolean method. `SmartCANJaguar::ExistsOnBus()`
 
 	SmartCANJaguar* leftDrive = new SmartCANJaguar(1);
-	if(leftDrive->ExistsBus()){
+	if(leftDrive->ExistsOnBus()){
 		printf("This exists\n");
 	}
 	else{
@@ -101,7 +101,7 @@ To do a diagnostic check to see if the 2CAN Bus can reach your CANJaguar hardwar
 
 <a name = "SmartCANJaguarSeries"/>
 ###SmartCANJaguarSeries
-This class can store pointers to `SmartCANJauar` objects, and then can be used to call methods on every single one. This is useful when multiple motor controllers are used to multiple motors that are controlled the exact same way at run time. For example, if you have a robot with 4 CIM motors for the drive train, 2 CANJaguars will be used on each side to control each motor. In this case, it's a lot easier to call one object that is responsible for sending the same instruction to both Jaguars.
+This class can store pointers to `SmartCANJaguar` objects, and then can be used to call methods on every single one. This is useful when multiple motor controllers are used to multiple motors that are controlled the exact same way at run time. For example, if you have a robot with 4 CIM motors for the drive train, 2 CANJaguars will be used on each side to control each motor. In this case, it's a lot easier to call one object that is responsible for sending the same instruction to both Jaguars.
 
 
 ####Example Configuration
@@ -110,11 +110,11 @@ This class can store pointers to `SmartCANJauar` objects, and then can be used t
 // set up two SmartCANJaguars
 // we don't have to hold these pointers so long as we hold a pointer for our
 // SmartCANJaguarSeries 
-SmartCANJaguar* leftFront = new SmartCANJauar(1);
+SmartCANJaguar* leftFront = new SmartCANJaguar(1);
 SmartCANJaguar* leftRear = new SmartCANJaguar(2);
 
 // the objects can be manipulated before being stored
-lefFront->Invert();
+leftFront->Invert();
 
 SmartCANJaguarSeries* left = new SmartCANJaguarSeries();
 left->add(leftFront);
@@ -125,12 +125,12 @@ left->Set(1);	//source all available power to both CANJaguar controllers
 </pre>
 
 ####Configure Control Mode
-Because the `SmartCANJaguarSeries` uses our `SmartCANJaguar` object you can use `SmartCANJaguar` methods to configure each CANJaguar controller a SmartCANJauarSeries object holds with `ConfigureSpeedMode()` and `ConfigureVoltageMode()`.
+Because the `SmartCANJaguarSeries` uses our `SmartCANJaguar` object you can use `SmartCANJaguar` methods to configure each CANJaguar controller a SmartCANJaguarSeries object holds with `ConfigureSpeedMode()` and `ConfigureVoltageMode()`.
 
 
 <a name = "SmartGyro"/>
 ###SmartGyro
-The `WPILib` `Gyro` class returns angle measurements in Radians/pi. This is useful for counting how many pis you have, but we don't like this form of measuring angles. When constructing a `SmartGyro` it will behave just like a `Gyro` but the data it returns can be manipulated to return degrees or radians, as well. By having an extension class to manipulate these values, you are warranted security, as every call to `SmartGyro::GetAngle` will return the same value, as opposed to manipulating what `Gyro::GetAngle` returns throughout your code.
+The `WPILib` `Gyro` class returns angle measurements in radians/pi. This is useful for counting how many pis you have, but we don't like this form of measuring angles. When constructing a `SmartGyro` it will behave just like a `Gyro` but the data it returns can be manipulated to return degrees or radians, as well. By having an extension class to manipulate these values, you are warranted security, as every call to `SmartGyro::GetAngle` will return the same value, as opposed to manipulating what `Gyro::GetAngle` returns throughout your code.
 
 ####Changing Gyro Mode
 	SmartGyro* gyro = new SmartGyro(1);
@@ -151,8 +151,8 @@ A class that extends the `Joystick` class. Provides for a ton of extra functiona
 	//simply add the word Smart in front of Joystick and you're all set
 	SmartJoystick* operatorStick = new SmartJoystick(1); //lots of functionality, fully compatible with the WPILib	as well!
 	
-####Configurable JoystickModes Modes
-A `SmartJoystick` can be set to three modes: `normal`, `extreme` and `cubic`. These modes alter the values that `SmartJoystick::GetX()` and `SmartJoystick::GetY()` return. *Note that all Joystick Modes supprort a small Dead Zone where Joystick input is ignored. This allows for the sticks to remain relatively close to a neutral position irl, but are still neutral in the software.*
+####Configurable Joystick Modes
+A `SmartJoystick` can be set to three modes: `normal`, `extreme` and `cubic`. These modes alter the values that `SmartJoystick::GetX()` and `SmartJoystick::GetY()` return. *Note that all Joystick Modes support a small Dead Zone where Joystick input is ignored. This allows for the sticks to remain relatively close to a neutral position in real life, but are still neutral in the software.*
 #####Normal
 A `SmartJoystick` in the `normal` mode returns regular `Joystick` when `SmartJoystick::GetX()` and `SmartJoystick::GetY()` are called.
 
@@ -164,7 +164,7 @@ A `SmartJoystick` in the `extreme` mode returns a full reading if the Joystick i
 	operatorStick->SetJoystickMode(SmartJoystick::extreme);
 	//stick is only nudged forward just a little bit…
 	float extremey = operatorStick->GetY();	// equals 1.0
-	//stick is only nduged backwards just a little bit…
+	//stick is only nudged backwards just a little bit…
 	extremey = operatorStick->GetY();			//equals -1.0
 #####Cubic
 This mode is a favorite with some of our drivers. It allows Joystick input to be scaled by a cubic factor to allow for a smoother acceleration rate as a Joystick is moved further and further forward or back.
@@ -202,7 +202,7 @@ WPILib `Command`s that make debugging and code manipulation easier.
 Takes a pointer to a WPILib `Subsystem	` and uses `Subsystem::Requires(Subsystem*)` to interrupt all WPILib `Command`s that use that `Subsystem`.
 
 	Subsystem* driveTrain = new Subsystem("DriveTrain"); //basic subsystem
-	InterruptSubsysem* command = new InterruptSubsystem(driveTrain);
+	InterruptSubsystem* command = new InterruptSubsystem(driveTrain);
 	command->Start();	//Interrupts all Subsystems that use DriveTrain
 
 <a name = "PrintStallData"/>
