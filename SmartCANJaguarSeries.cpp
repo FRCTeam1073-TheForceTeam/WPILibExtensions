@@ -6,6 +6,15 @@ void SmartCANJaguarSeries::Add(SmartCANJaguar* jaguar) {
 	jagList->push_back(jaguar);
 }
 
+void SmartCANJaguarSeries::Add(int count, ...) {
+	va_list list;
+	va_start(list, count);
+	for (int i = 0; i < count; i++) {
+		jagList->push_back(va_arg(list, SmartCANJaguar*));
+	}
+	va_end(list);
+}
+
 void SmartCANJaguarSeries::Set(float value) {
 	for (int i = 0; i < (int)jagList->size(); i++) {
 		jagList->at(i)->Set(value);

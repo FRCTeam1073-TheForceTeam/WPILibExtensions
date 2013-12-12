@@ -2,10 +2,12 @@
 #define SMART_CAN_JAGUAR_SERIES_H
 #include "SmartCANJaguar.h"
 #include <vector>
+#include <cstdarg>
 class SmartCANJaguarSeries {
 public:
 	SmartCANJaguarSeries();
 	void Add(SmartCANJaguar* jaguar);
+	void Add(int count, ...);
 	void Set(float value);
 	void ConfigureVoltageMode();
 	void ConfigureSpeedMode();
