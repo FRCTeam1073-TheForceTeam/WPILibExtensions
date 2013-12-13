@@ -5,7 +5,7 @@ The following document explains all of our tools and the functionality they will
 
 
 ##Usage
-To use any of these tools, simply include the global header file WPILibExtensions.h with the following code:
+To use any of these tools, simply include the global header file `WPILibExtensions.h` with the following code:
 
 ```	
 	#include "WPILibExtensions/WPILibExtensions.h"
