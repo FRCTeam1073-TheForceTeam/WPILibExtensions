@@ -56,7 +56,7 @@ Simple inline boolean functions for doing a quick check for a Limit Switch being
 ###SmartCANJaguar
 A class that provides some useful functions to `CANJaguar`.
 ####Inversion
-`SmartCANJaguar`s can easily be inverted by calling the method `Invert` on them. This usually has to happen because motors are mounted or wired differently than the code thinks they are. Usually, we'd multiply whatever we set by `-1`, but this creates for sloppy code. **Inverted `SmartCANJaguar`s provide for global support and keeps the code clean.**
+`SmartCANJaguar`s can easily be inverted by calling the method `Invert` on them. This usually has to happen because motors are mounted or wired differently than the code thinks they are. Usually, we'd multiply whatever we set by `-1`, but this is a recipe for some sloppy code. **Inverted `SmartCANJaguar`s provide global support for inversion and in doing so they keep the code cleaner.**
 
 	SmartCANJaguar* rightDrive = new SmartCANJaguar(2);	//make jag
 	rightDrive->Invert();	//Invert Jag
