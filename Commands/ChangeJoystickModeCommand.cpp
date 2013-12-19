@@ -9,6 +9,10 @@ void ChangeJoystickModeCommand::Initialize() {
 	for (int i = 0; i < size; i++) {
 		joysticks->at(i)->SetJoystickMode(mode);
 	}
+	printf("In joystick mode:\t");
+	if (mode == SmartJoystick::normal) puts("nomral");
+	else if (mode == SmartJoystick::extreme) puts ("extreme");
+	else puts ("cubic");
 }
 
 void ChangeJoystickModeCommand::Execute() {}
