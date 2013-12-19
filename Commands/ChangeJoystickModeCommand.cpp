@@ -1,10 +1,8 @@
 #include "ChangeJoystickModeCommand.h"
-
 vector<SmartJoystick*>* ChangeJoystickModeCommand::joysticks = new vector<SmartJoystick*>();
 ChangeJoystickModeCommand::ChangeJoystickModeCommand(SmartJoystick::JoystickMode mode) {
 	this->mode = mode;
 }
-
 
 void ChangeJoystickModeCommand::Initialize() {
 	int size = (int)joysticks->size();
