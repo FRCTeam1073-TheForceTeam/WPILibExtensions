@@ -13,8 +13,10 @@ To use any of these tools, simply include the global header file `WPILibExtensio
 
 *Note that this statement assumes that the WPILibExtensions directory was cloned in the root of your WindRiver project.*
 
-
 These classes extend off items in Brad Miller's `WPILib` to add even more functionality to your robot codebase. We hope that they will be of help to you! If you ever need help, or want to see a feature added, you're welcome to talk over this GitHub repository, or to code the feature in yourself!
+
+##Robot Builder
+Now WPILibExtensions supports the FRC development tool Robot Builder! For those unfamiliar with the program, it's a drag and drop tool to help lay out the skeleton of a robot codebase. This version of Robot Builder uses WPILibExtensions in the code it generates so you can leverage the utilities this library gets right from the get go. In order to get this version, download this specially compiled version of the program from [here](http://evinugur.com/RobotBuilderWPILibExtensions.jar). For those interested, its source code is hosted on [GitHub](https://github.com/FRCTeam1073-TheForceTeam/RobotBuilderWPILibExtensions) as well.
 
 ##Contents:
 **[Tools:](#Tools)**
