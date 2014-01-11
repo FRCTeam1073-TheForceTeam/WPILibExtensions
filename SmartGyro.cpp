@@ -1,5 +1,8 @@
 #include "SmartGyro.h"
 SmartGyro::SmartGyro(UINT32 channel) : Gyro(channel){gyroMode = radiansOverPi;}
+SmartGyro::SmartGyro(UINT32 module, UINT32 channel) : Gyro(module, channel) {
+	gyroMode = radiansOverPi;
+}
 void SmartGyro::SetGyroMode(GyroMode gyroMode){this->gyroMode = gyroMode;}
 SmartGyro::GyroMode SmartGyro::GetGyroMode(){return gyroMode;}
 float SmartGyro::GetAngle(){
