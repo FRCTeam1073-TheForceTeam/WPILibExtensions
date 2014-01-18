@@ -13,5 +13,5 @@ float AnalogPressureTransducer::GetPressurePSI(){
 }
 
 bool AnalogPressureTransducer::IsValidVoltage(float voltage){
-	return LOW_VOLT <= voltage <= HIGH_VOLT; // Voltage should always be form 0.5 volts to 4.5 votls
+	return LOW_VOLT <= voltage <= HIGH_VOLT; // Voltage should always be from 0.5 volts to 4.5 volts
 }
