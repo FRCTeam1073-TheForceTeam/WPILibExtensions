@@ -1,6 +1,6 @@
 #ifndef SMART_JOYSTICK_H
 #define SMART_JOYSTICK_H
-#define DEAD_ZONE 0.05
+#define DEAD_ZONE 0.075
 #define CUBIC_CONSTANT 0.1
 #include "WPILib.h"
 #include <math.h>
