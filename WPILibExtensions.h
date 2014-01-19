@@ -13,4 +13,5 @@
 #include "Commands/PrintStallData.h"
 #include "Commands/InterruptSubsystem.h"
 #include "Commands/ChangeJoystickModeCommand.h"
+#include "Commands/ToggleCommand.h"
 #endif
