@@ -1,0 +1,3 @@
+[submodule "Documentation"]
+	path = Documentation
+	url = https://github.com/FRCTeam1073-TheForceTeam/WPILibExtensions.git
