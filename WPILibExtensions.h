@@ -9,6 +9,7 @@
 #include "SmartCANJaguar.h"
 #include "OnOff.h"
 #include "IREncoder.h"
+#include "SpeedControllerSeries.h"
 #include "SmartCANJaguarSeries.h"
 #include "AnalogPressureTransducer.h"
 #include "Commands/PrintStallData.h"
