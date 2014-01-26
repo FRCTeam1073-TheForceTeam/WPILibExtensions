@@ -4,6 +4,7 @@
 #include "SmartGyro.h"
 #include "CommonFunctions.h"
 #include "SmartJoystick.h"
+#include "SmartTalon.h"
 #include "StallableAnalogEncoder.h"
 #include "SmartCANJaguar.h"
 #include "OnOff.h"
