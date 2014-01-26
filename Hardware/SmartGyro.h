@@ -1,7 +1,7 @@
 #ifndef SMART_GYRO_H
 #define SMART_GYRO_H
 #include "WPILib.h"
-#include "CommonFunctions.h"
+#include "../Common/CommonFunctions.h"
 class SmartGyro : public Gyro{
 public:
 	SmartGyro(UINT32 channel);

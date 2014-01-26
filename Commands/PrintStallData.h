@@ -2,7 +2,7 @@
 #define PRINT_STALL_DATA_H
 #include "WPILib.h"
 #include "Commands/Subsystem.h"
-#include "../Stallable.h"
+#include "../Hardware/Stallable.h"
 class PrintStallData : public Command{
 public:
 	PrintStallData(Stallable* stallable);

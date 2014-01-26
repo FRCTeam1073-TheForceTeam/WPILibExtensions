@@ -1,7 +1,7 @@
 #ifndef CHAGNE_JOYSTICK_BASE_H
 #define CHANGE_JOYSTICK_BASE_H
 #include "WPILib.h"
-#include "../SmartJoystick.h"
+#include "../OI/SmartJoystick.h"
 #include <vector>
 #include <cstdarg>
 class ChangeJoystickModeCommand : public Command {
