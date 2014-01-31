@@ -10,4 +10,5 @@
 #include "SpeedControllerSeries.h"
 #include "Stallable.h"
 #include "StallableAnalogEncoder.h"
+#include "LEDString.h"
 #endif
