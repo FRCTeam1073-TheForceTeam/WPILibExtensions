@@ -3,6 +3,7 @@
 #include "../OI/LEDColor.h"
 #include "WPILib.h"
 class LEDString {
+	// TODO: keenan, this is where the project interfacing goes
 public:
 	LEDString(int one, int two, int three);
 	void Set(LEDColor* color);
