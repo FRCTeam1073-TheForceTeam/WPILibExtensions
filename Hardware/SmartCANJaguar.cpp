@@ -1,19 +1,12 @@
 #include "SmartCANJaguar.h"
-SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, int syncGroup) : CANJaguar(deviceNumber), Stallable(){
-	Initialize(syncGroup, false);
-}
-SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted, int syncGroup) : CANJaguar(deviceNumber), Stallable(){
-	Initialize(syncGroup, isInverted);
-}
-void SmartCANJaguar::Initialize(int syncGroup, bool isInverted) {
-	SetSyncGroup(syncGroup);
+SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted) : CANJaguar(deviceNumber), Stallable(){
 	this->isInverted = isInverted;
 }
 void SmartCANJaguar::Invert() {isInverted = !isInverted;}
 bool SmartCANJaguar::IsInverted(){return isInverted;}
-void SmartCANJaguar::Set(float value){
-	if(isInverted)value*=-1;
-	CANJaguar::Set(value, syncGroup);
+void SmartCANJaguar::Set(float value, SyncMask bitMask){
+	if (isInverted) value *= -1;
+	CANJaguar::Set(value, bitMask);
 }
 float SmartCANJaguar::GetVoltageSource(){return GetOutputVoltage();}
 void SmartCANJaguar::ConfigureSpeedMode(){
@@ -35,12 +28,4 @@ bool SmartCANJaguar::ExistsOnBus(){
 		return false;
 	}
 	return true;
-}
-
-int SmartCANJaguar::GetSyncGroup() {
-	return syncGroup;
-}
-
-void SmartCANJaguar::SetSyncGroup(int syncGroup) {
-	this->syncGroup = syncGroup;
 }
