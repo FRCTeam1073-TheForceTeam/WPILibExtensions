@@ -2,6 +2,7 @@
 #define SMART_CAN_JAGUAR_H
 #include "WPILib.h"
 #include "Stallable.h"
+#include "../Common/CommonFunctions.h"
 #define CAN_TIMEOUT -44087 //The 2CAN will give this error if it does not see a CANJaguar at the specified CAN ID.
 class SmartCANJaguar : public CANJaguar, public Stallable{
 public:
@@ -19,11 +20,13 @@ public:
 	} SyncMask;
 	void Invert();
 	bool IsInverted();
-	void Set(float value, SyncMask bitMask = kGroupNone);
+	void Set(float value, SyncMask bitMask );
+	void Set(float value, uint8_t bitMask = 0);
 	void ConfigureSpeedMode();
 	void ConfigureVoltageMode();
 	bool ExistsOnBus();
-
+	static uint8_t CombineSyncGroups(uint8_t bitmasks[]);
+	static uint8_t CombineSyncGroups(SyncMask bitmasks[]);
 private:
 	bool isInverted;
 protected:
