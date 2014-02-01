@@ -45,16 +45,12 @@ uint8_t SmartCANJaguar::CombineSyncGroups(SyncMask bitmasks[]) {
 uint8_t SmartCANJaguar::CombineSyncGroups(uint8_t bitmasks[]) {
 	int len = ARRAY_LEN(bitmasks);
 	if (len == 0) return (uint8_t) kGroupNone;
-	uint8_t val;
-	for (int i = 0; i < (len - 1); i++) {
-		val = bitmasks[i] | bitmasks[i + 1];
+	else if( len == 1) return bitmasks[0];
+	else {
+		uint8_t val = bitmasks[0];
+		for (int i = 1; i < len; i++) {
+			val |= bitmasks[i];
+		}
+		return val;
 	}
-	return val;
 }
-
-
-
-
-
-
-
