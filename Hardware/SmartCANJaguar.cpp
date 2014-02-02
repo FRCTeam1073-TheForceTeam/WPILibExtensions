@@ -1,14 +1,10 @@
 #include "SmartCANJaguar.h"
-SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted) : CANJaguar(deviceNumber), Stallable(){
-	this->isInverted = isInverted;
-}
-void SmartCANJaguar::Invert() {isInverted = !isInverted;}
-bool SmartCANJaguar::IsInverted(){return isInverted;}
+SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted) : CANJaguar(deviceNumber), Stallable(), Invertable(isInverted){}
 void SmartCANJaguar::Set(float value, SyncMask bitMask){
 	SmartCANJaguar::Set(value, (uint8_t)bitMask);
 }
 void SmartCANJaguar::Set(float value, uint8_t bitMask) {
-	if (isInverted) value *= -1;
+	if (IsInverted()) value *= -1;
 	CANJaguar::Set(value, bitMask);
 }
 float SmartCANJaguar::GetVoltageSource(){return GetOutputVoltage();}

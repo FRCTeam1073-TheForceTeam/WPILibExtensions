@@ -1,13 +1,7 @@
 #include "SmartTalon.h"
 
-SmartTalon::SmartTalon(int module, int channel) : Talon(module, channel) {
-	isInverted = false;
-}
-
-void SmartTalon::Invert() {
-	isInverted = !isInverted;
-}
-
-bool SmartTalon::IsInverted() {
-	return isInverted;
+SmartTalon::SmartTalon(int module, int channel) : Talon(module, channel), Invertable() {}
+void SmartTalon::Set(float value) {
+	if (IsInverted()) value *= -1;
+	Talon::Set(value);
 }
