@@ -4,4 +4,5 @@
 #include "InterruptSubsystem.h"
 #include "PrintStallData.h"
 #include "ToggleCommand.h"
+#include "InterruptCallsEndCommand.h"
 #endif

@@ -3,14 +3,14 @@
 #include "WPILib.h"
 #include "Commands/Subsystem.h"
 #include "../Hardware/Stallable.h"
-class PrintStallData : public Command{
+#include "InterruptCallsEndCommand.h"
+class PrintStallData : public InterruptCallsEndCommand{
 public:
 	PrintStallData(Stallable* stallable);
 	void Initialize();
-	void Execute(){}
+	void Execute();
 	bool IsFinished();
-	void End(){}
-	void Interrupted(){}
+	void End();
 private:
 	Stallable* stallable;
 };
