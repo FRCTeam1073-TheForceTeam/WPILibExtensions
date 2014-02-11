@@ -9,6 +9,7 @@
 #include "SmartTalon.h"
 #include "SpeedControllerSeries.h"
 #include "StallableAnalogEncoder.h"
+#include "CurrentSensor.h"
 // WPILibExtensions "interfaces"
 #include "Stallable.h"
 #include "Invertable.h"
