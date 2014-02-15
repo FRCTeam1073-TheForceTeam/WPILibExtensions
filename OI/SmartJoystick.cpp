@@ -53,5 +53,5 @@ float SmartJoystick::Get(Axis axis){
 	return value;
 }
 
-float SmartJoystick::GetCubicConstnat() { return cubicConstant; }
+float SmartJoystick::GetCubicConstant() { return cubicConstant; }
 void SmartJoystick::SetCubicConstant(float cubicConstant) {this->cubicConstant = cubicConstant;}

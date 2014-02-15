@@ -25,7 +25,7 @@ public:
 	void ToggleInvertZAxis();
 	void SetJoystickMode(JoystickMode newMode);
 	JoystickMode GetJoystickMode();
-	float GetCubicConstnat();
+	float GetCubicConstant();
 	void SetCubicConstant(float cubicConstant);
 private:
 	bool invertXAxis, invertYAxis, invertZAxis;
