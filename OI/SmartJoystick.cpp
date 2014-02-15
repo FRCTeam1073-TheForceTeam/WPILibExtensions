@@ -1,13 +1,15 @@
 #include "SmartJoystick.h"
 SmartJoystick::SmartJoystick(int port) : Joystick (port){
-	invertXAxis = false;
-	invertYAxis = false;
-	invertZAxis = false;
+	Initialize(false);
 }
 SmartJoystick::SmartJoystick(int port, bool invertYAxis) : Joystick (port){
+	Initialize(invertYAxis);
+}
+void SmartJoystick::Initialize(bool invertYAxis) {
 	invertXAxis = false;
 	this->invertYAxis = invertYAxis;
 	invertZAxis = false;
+	cubicConstant = 0.1;	
 }
 float SmartJoystick::GetX(){return Get(xAxis);}
 float SmartJoystick::GetY(){return Get(yAxis);}
@@ -44,9 +46,12 @@ float SmartJoystick::Get(Axis axis){
 			else if (value < 0) value = -1.0f;
 			break;
 		case cubic:
-			value = (value * CUBIC_CONSTANT) + (1 - CUBIC_CONSTANT) * (value * value * value);
+			value = (value * cubicConstant) + (1 - cubicConstant) * (value * value * value);
 			break;
 		default: break;
 	}
 	return value;
 }
+
+float SmartJoystick::GetCubicConstnat() { return cubicConstant; }
+void SmartJoystick::SetCubicConstant(float cubicConstant) {this->cubicConstant = cubicConstant;}

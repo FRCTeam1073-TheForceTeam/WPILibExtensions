@@ -1,7 +1,6 @@
 #ifndef SMART_JOYSTICK_H
 #define SMART_JOYSTICK_H
 #define DEAD_ZONE 0.075
-#define CUBIC_CONSTANT 0.1
 #include "WPILib.h"
 #include <math.h>
 class SmartJoystick : public Joystick{
@@ -26,10 +25,14 @@ public:
 	void ToggleInvertZAxis();
 	void SetJoystickMode(JoystickMode newMode);
 	JoystickMode GetJoystickMode();
+	float GetCubicConstnat();
+	void SetCubicConstant(float cubicConstant);
 private:
 	bool invertXAxis, invertYAxis, invertZAxis;
+	float cubicConstant;
 	enum Axis{xAxis, yAxis, zAxis};
 	JoystickMode mode;
 	float Get(Axis axis);
+	void Initialize(bool invertYAxis);
 };
 #endif
