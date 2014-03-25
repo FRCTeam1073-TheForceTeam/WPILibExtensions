@@ -1,5 +1,7 @@
 #include "SmartCANJaguar.h"
-SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted) : CANJaguar(deviceNumber), Stallable(), Invertable(isInverted){}
+SmartCANJaguar::SmartCANJaguar(UINT8 deviceNumber, bool isInverted, ControlMode controlMode) : CANJaguar(deviceNumber, controlMode),
+																								Stallable(), Invertable(isInverted)
+{}
 void SmartCANJaguar::Set(float value, SyncMask bitMask){
 	SmartCANJaguar::Set(value, (uint8_t)bitMask);
 }

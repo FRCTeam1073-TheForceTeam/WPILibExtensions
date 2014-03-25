@@ -7,7 +7,7 @@
 #define CAN_TIMEOUT -44087 //The 2CAN will give this error if it does not see a CANJaguar at the specified CAN ID.
 class SmartCANJaguar : public CANJaguar, public Stallable, public Invertable{
 public:
-	SmartCANJaguar(UINT8 deviceNumber, bool isInverted = false);
+	SmartCANJaguar(UINT8 deviceNumber, bool isInverted = false , ControlMode controlMode = kPercentVbus);
 	typedef enum {
 		kGroupNone = 0x00000000,
 		kGroup1 = 0x00000001,
