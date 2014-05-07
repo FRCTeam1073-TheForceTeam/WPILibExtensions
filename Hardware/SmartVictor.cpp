@@ -1,6 +1,6 @@
-#include "SmartVictor.cpp"
-SmartVictor::SmartVictor(int module, int channel)
- : Victor(module, channel), Invertable(IsInverted)
+#include "SmartVictor.h"
+SmartVictor::SmartVictor(int module, int channel, bool isInverted)
+ : Victor(module, channel), Invertable(isInverted)
  {
  	// ...
  }
