@@ -6,6 +6,7 @@
 #include "SmartCANJaguar.h"
 #include "SmartCANJaguarSeries.h"
 #include "SmartGyro.h"
+#include "SmartVictor.h"
 #include "SmartTalon.h"
 #include "SpeedControllerSeries.h"
 #include "StallableAnalogEncoder.h"
